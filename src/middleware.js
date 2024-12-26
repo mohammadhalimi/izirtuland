@@ -3,7 +3,6 @@ import { jwtVerify } from 'jose';
 
 export async function middleware(request) {
     const { pathname } = request.nextUrl;
-    // بررسی مسیر /signup
     if (pathname === '/signup') {
         const authCookie = request.cookies.get('user-token');
         const authToken = authCookie ? authCookie.value : null;
@@ -11,7 +10,6 @@ export async function middleware(request) {
         if (authToken && typeof authToken === 'string') {
             try {
                 const { payload } = await jwtVerify(authToken, new TextEncoder().encode(process.env.JWT_SECRET));
-                // هدایت کاربر به صفحه پروفایل اگر قبلاً لاگین کرده است
                 const receptor = payload.receptor;
                 return NextResponse.redirect(new URL(`/userpanel/${receptor}`, request.url));
             } catch (err) {
@@ -20,16 +18,13 @@ export async function middleware(request) {
         }
     }
 
-    // مسیر /admin
     if (pathname.startsWith('/admin')) {
         const authCookie = request.cookies.get('auth-token');
-        // اگر کاربر احراز هویت نشده باشد، به صفحه اصلی ریدایرکت می‌شود
         if (!authCookie) {
             return NextResponse.redirect(new URL('/', request.url));
         }
     }
 
-    // مسیر /userpanel
     if (pathname.startsWith('/userpanel')) {
         const authCookie = request.cookies.get('user-token');
         const authToken = authCookie ? authCookie.value : null;
