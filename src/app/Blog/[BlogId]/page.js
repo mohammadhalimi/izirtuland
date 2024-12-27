@@ -24,8 +24,7 @@ const Blogs = ({ params }) => {
 
     if (isLoading) return <BlogPostSkeleton />
     if (!data) return <Err />;
-    data.map
-    return (
+     return (
         <div className='max-w-screen-xl flex flex-wrap justify-center mx-auto p-4 my-4' dir='rtl'>
             {
                 data.map((items) => (
