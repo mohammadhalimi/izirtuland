@@ -1,6 +1,6 @@
 ![Project Image](https://biaupload.com/do.php?imgf=org-4189cb5004a21.png)
 
-This project is a full-stack website developed for Porbar Baghestan Company.  
+This project is a full-stack website developed for Parbar Baghestan Company.  
 Website address: [www.izirtuland.ir](http://www.izirtuland.ir)
 
 ## Project Features:
@@ -14,4 +14,8 @@ Website address: [www.izirtuland.ir](http://www.izirtuland.ir)
 
 ### Technologies Used:
 - **Frontend**: Next.js  
-- **Backend**: Node.js 
+- **Backend**: Node.js  
+
+### Special Thanks:
+Thanks to Liara Hosting for their excellent services.
+
