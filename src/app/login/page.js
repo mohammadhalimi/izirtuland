@@ -6,7 +6,7 @@ import Login from '@/components/login';
 
 const Page = () => {
     useEffect(() => {
-        fetch('http://localhost:3000/pages/api/userpass')
+        fetch('https://izirtuland.liara.run/pages/api/userpass')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);

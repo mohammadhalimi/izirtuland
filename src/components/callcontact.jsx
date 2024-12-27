@@ -55,7 +55,7 @@ const CallContact = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:3000/pages/api/contact')
+        fetch('https://izirtuland.liara.run/pages/api/contact')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);

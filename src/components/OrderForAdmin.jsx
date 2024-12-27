@@ -10,7 +10,7 @@ const OrderForAdmin = () => {
   const [searchTrackId, setSearchTrackId] = useState("");
 
   useEffect(() => {
-    fetch('http://localhost:3000/pages/api/infouser')
+    fetch('https://izirtuland.liara.run/pages/api/infouser')
       .then((res) => res.json())
       .then((data) => {
         setUserData(data);
@@ -23,7 +23,7 @@ const OrderForAdmin = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:3000/pages/api/saveorder')
+    fetch('https://izirtuland.liara.run/pages/api/saveorder')
       .then((res) => res.json())
       .then((data) => {
         setOrderData(data);

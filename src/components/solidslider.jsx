@@ -16,7 +16,7 @@ const SolidSlider = () => {
   const [da, setDa] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/pages/api/solidslider')
+    fetch('https://izirtuland.liara.run/pages/api/solidslider')
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -29,7 +29,7 @@ const SolidSlider = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:3000/pages/api/listfertilizer')
+    fetch('https://izirtuland.liara.run/pages/api/listfertilizer')
       .then((res) => res.json())
       .then((da) => {
         setDa(da);

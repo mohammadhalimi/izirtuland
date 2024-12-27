@@ -19,7 +19,7 @@ export default function PaymentSuccess() {
   let savingInProgress = false;
 
   useEffect(() => {
-    fetch('http://localhost:3000/pages/api/success')
+    fetch('https://izirtuland.liara.run/pages/api/success')
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -50,7 +50,7 @@ export default function PaymentSuccess() {
       const track = finalBuyData?.trackId || '';
 
       try {
-        const response = await fetch('http://localhost:3000/pages/api/callback', {
+        const response = await fetch('https://izirtuland.liara.run/pages/api/callback', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -73,7 +73,7 @@ export default function PaymentSuccess() {
       const track = finalBuyData?.trackId || '';
 
       try {
-        const response = await fetch('http://localhost:3000/pages/api/sendinfoadmin', {
+        const response = await fetch('https://izirtuland.liara.run/pages/api/sendinfoadmin', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -103,7 +103,7 @@ export default function PaymentSuccess() {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/pages/api/saveorder', {
+      const response = await fetch('https://izirtuland.liara.run/pages/api/saveorder', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

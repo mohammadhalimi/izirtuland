@@ -11,7 +11,7 @@ const HeaderSm = ({ onClick }) => {
     const menuRef = useRef(null); 
 
     useEffect(() => {
-        fetch('http://localhost:3000/pages/api/header')
+        fetch('https://izirtuland.liara.run/pages/api/header')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);

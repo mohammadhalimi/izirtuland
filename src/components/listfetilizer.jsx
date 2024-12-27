@@ -17,7 +17,7 @@ const ListFertilizer = () => {
     });
 
     useEffect(() => {
-        fetch('http://localhost:3000/pages/api/listfertilizer')
+        fetch('https://izirtuland.liara.run/pages/api/listfertilizer')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);

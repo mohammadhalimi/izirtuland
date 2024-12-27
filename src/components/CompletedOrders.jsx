@@ -13,7 +13,7 @@ const CompletedOrders = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:3000/pages/api/saveorder')
+    fetch('https://izirtuland.liara.run/pages/api/saveorder')
       .then((res) => res.json())
       .then((data) => {
         setOrderData(data);

@@ -1,7 +1,7 @@
 import Err from "app/not-found";
 
 async function getData() {
-    const res = await fetch("http://localhost:3000/pages/api/list", { cache: "no-store" });
+    const res = await fetch("https://izirtuland.liara.run/pages/api/list", { cache: "no-store" });
     if (!res.ok) return <Err />
     return res.json();
 }

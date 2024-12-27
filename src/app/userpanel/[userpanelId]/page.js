@@ -24,7 +24,7 @@ const Useer = ({ params }) => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch('http://localhost:3000/pages/api/usermenu');
+        const response = await fetch('https://izirtuland.liara.run/pages/api/usermenu');
         const data = await response.json();
 
         const items = data.map((item) => ({
@@ -45,7 +45,7 @@ const Useer = ({ params }) => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:3000/pages/api/sendsms')
+    fetch('https://izirtuland.liara.run/pages/api/sendsms')
       .then((res) => res.json())
       .then((data) => {
         setData(data);

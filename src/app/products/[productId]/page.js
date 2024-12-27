@@ -49,7 +49,7 @@ const Product = ({ params }) => {
         
     };
     useEffect(() => {
-        fetch('http://localhost:3000/pages/api/pageproduct')
+        fetch('https://izirtuland.liara.run/pages/api/pageproduct')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);

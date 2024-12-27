@@ -42,7 +42,6 @@ const LogoBuy = () => {
                 height="36"
                 width="36"
             >
-                <desc>Shopping Cart 1 Streamline Icon: https://streamlinehq.com</desc>
                 <path
                     stroke="#000000"
                     strokeLinecap="round"

@@ -16,7 +16,7 @@ const LiquidSlider = () => {
   const [da , setDa] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/pages/api/liquidslider')
+    fetch('https://izirtuland.liara.run/pages/api/liquidslider')
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -29,7 +29,7 @@ const LiquidSlider = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:3000/pages/api/listfertilizer')
+    fetch('https://izirtuland.liara.run/pages/api/listfertilizer')
       .then((res) => res.json())
       .then((da) => {
         setDa(da);

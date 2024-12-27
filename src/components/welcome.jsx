@@ -5,7 +5,7 @@ const Welcome = () => {
     const [data, setData] = useState(null);
     const [isLoading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:3000/pages/api/welcome')
+        fetch('https://izirtuland.liara.run/pages/api/welcome')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);

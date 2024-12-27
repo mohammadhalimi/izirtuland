@@ -22,7 +22,7 @@ const Load = () => {
 }
 
 async function getdata() {
-    const res = await fetch("http://localhost:3000/pages/api/need", { cache: "no-store" });
+    const res = await fetch("https://izirtuland.liara.run/pages/api/need", { cache: "no-store" });
     if (!res.ok) return <Load />
     return res.json();
 }

@@ -32,7 +32,7 @@ const Footer = () => {
     
   
     useEffect(() => {
-      fetch('http://localhost:3000/pages/api/footer')
+      fetch('https://izirtuland.liara.run/pages/api/footer')
         .then((res) => res.json())
         .then((data) => {
           setData(data);

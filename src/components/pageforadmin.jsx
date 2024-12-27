@@ -11,7 +11,7 @@ const PageForAdmin = () => {
     const [editingItemId, setEditingItemId] = useState(null);
     const [editedData, setEditedData] = useState({ title: '', text: '', table: '', price: '', pic: '', brand: '', package: '', buy: '', id: '', _id: '' });
     useEffect(() => {
-        fetch('http://localhost:3000/pages/api/pageproduct')
+        fetch('https://izirtuland.liara.run/pages/api/pageproduct')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);
@@ -26,7 +26,7 @@ const PageForAdmin = () => {
     const deleteItem = async (_id) => {
         console.log("Deleting item with ID:", _id);
         try {
-            const res = await fetch('http://localhost:3000/pages/api/pageproduct', {
+            const res = await fetch('https://izirtuland.liara.run/pages/api/pageproduct', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const PageForAdmin = () => {
 
     const updateItem = async () => {
         try {
-            const res = await fetch('http://localhost:3000/pages/api/pageproduct', {
+            const res = await fetch('https://izirtuland.liara.run/pages/api/pageproduct', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(editedData),
@@ -72,7 +72,7 @@ const PageForAdmin = () => {
 
     const addNewProduct = async () => {
         try {
-            const res = await fetch('http://localhost:3000/pages/api/pageproduct', {
+            const res = await fetch('https://izirtuland.liara.run/pages/api/pageproduct', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newProduct),

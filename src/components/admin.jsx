@@ -18,7 +18,7 @@ const Admin = ({ logout }) => {
   useEffect(() => {
     const fetchMenuItems = async () => {
       try {
-        const response = await fetch('http://localhost:3000/pages/api/menuitem');
+        const response = await fetch('https://izirtuland.liara.run/pages/api/menuitem');
         const data = await response.json();
 
         const items = data.map((item) => ({

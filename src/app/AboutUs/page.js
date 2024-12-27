@@ -6,7 +6,7 @@ export const metadata = {
 }
 
 async function getData() {
-    const res = await fetch("http://localhost:3000/pages/api/aboutUs", { cache: "no-store" });
+    const res = await fetch("https://izirtuland.liara.run/pages/api/aboutUs", { cache: "no-store" });
     if (!res.ok) return Err
     return res.json();
 }
