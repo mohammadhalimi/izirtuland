@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import Kavenegar from 'kavenegar';
 
 const api = Kavenegar.KavenegarApi({
-    apikey: process.env.API_KEY,
+    apikey: process.env.NEXT_PUBLIC_API_KEY,
 });
 
 export async function POST(req) {

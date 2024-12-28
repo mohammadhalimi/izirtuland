@@ -5,8 +5,8 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.NEXT_PUBLIC_EMAIL_USER,
+        pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
     },
 });
 
@@ -14,7 +14,7 @@ export async function POST(req) {
     const { name, email, message } = await req.json();
 
     const mailOptions = {
-      to: process.env.EMAIL_USER,
+      to: process.env.NEXT_PUBLIC_EMAIL_USER,
       from: email, 
       replyTo: email,
       subject: `Message from ${name}`,

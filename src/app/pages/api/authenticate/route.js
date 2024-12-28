@@ -5,7 +5,7 @@ export async function POST(req, res) {
     const body = await req.json();
     const { token, inputCode } = body;
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = jwt.verify(token, process.env.NEXT_PUBLIC_JWT_SECRET);
         // بررسی کد احراز هویت (برای سادگی فرض می‌کنیم موفقیت‌آمیز است)
         if (parseInt(inputCode) === decoded.token) {
             const userToken = jwt.sign(
