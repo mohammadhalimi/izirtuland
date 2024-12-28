@@ -9,7 +9,7 @@ export async function middleware(request) {
 
         if (authToken && typeof authToken === 'string') {
             try {
-                const { payload } = await jwtVerify(authToken, new TextEncoder().encode(process.env.NEXT_PUBLIC_JWT_SECRET));
+                const { payload } = await jwtVerify(authToken, new TextEncoder().encode(process.env.JWT_SECRET));
                 const receptor = payload.receptor;
                 return NextResponse.redirect(new URL(`/userpanel/${receptor}`, request.url));
             } catch (err) {
@@ -35,7 +35,7 @@ export async function middleware(request) {
         }
 
         try {
-            const { payload } = await jwtVerify(authToken, new TextEncoder().encode(process.env.NEXT_PUBLIC_JWT_SECRET));
+            const { payload } = await jwtVerify(authToken, new TextEncoder().encode(process.env.JWT_SECRET));
             const receptorInUrl = pathname.split('/')[2];
 
             if (payload.receptor !== receptorInUrl) {
