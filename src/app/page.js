@@ -8,12 +8,12 @@ import LiquidSlider from '@/components/liquidslider';
 export default function Home() {
   return (
     <>
-      {/* <FertiNeed />
+      <FertiNeed />
       <SolidSlider />
       <Customer />
       <License />
       <LiquidSlider />
-      <Blog /> */}
+      <Blog />
     </>
   );
 }
