@@ -2,7 +2,12 @@ import { NextResponse } from 'next/server';
 import { jwtVerify } from 'jose';
 
 export async function middleware(request) {
-    const { pathname } = request.nextUrl;
+    const { pathname } = request.nextUrl
+
+    if(pathname === '/pages/api'){
+        return NextResponse.redirect(new URL('/', request.url));
+    }
+
     if (pathname === '/signup') {
         const authCookie = request.cookies.get('user-token');
         const authToken = authCookie ? authCookie.value : null;
@@ -52,5 +57,5 @@ export async function middleware(request) {
 }
 
 export const config = {
-    matcher: ['/userpanel/:path*', '/admin/:path*', '/signup'],
+    matcher: ['/userpanel/:path*', '/admin/:path*', '/signup','/pages/api/:path*'],
 };

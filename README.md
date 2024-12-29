@@ -16,6 +16,12 @@ Website address: [www.izirtuland.ir](http://www.izirtuland.ir)
 - **Frontend**: Next.js  
 - **Backend**: Node.js  
 
+### Performance:
+Our website's performance scores are as follows:  
+- **Desktop Performance**:  
+  ![Desktop Performance](https://biaupload.com/do.php?imgf=org-78f2c2728fc21.png)  
+- **Mobile Performance**:  
+  ![Mobile Performance](https://biaupload.com/do.php?imgf=org-c8f6dda639a02.png)  
+
 ### Special Thanks:
 Thanks to Liara Hosting for their excellent services.
-
