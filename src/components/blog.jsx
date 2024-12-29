@@ -31,7 +31,7 @@ const Load = () => {
 };
 
 async function getdata() {
-    const res = await fetch("https://izirtuland.liara.run/pages/api/blog", { cache: "no-store" });
+    const res = await fetch("https://izirtuland.ir/pages/api/blog", { cache: "no-store" });
     if (!res.ok) return <Load />;
     return res.json();
 }

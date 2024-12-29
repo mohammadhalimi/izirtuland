@@ -8,7 +8,7 @@ const Login = ({ username, password, onUsernameChange, onPasswordChange, onLogin
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://izirtuland.liara.run/pages/api/login')
+        fetch('https://izirtuland.ir/pages/api/login')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);

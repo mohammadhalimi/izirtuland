@@ -23,7 +23,7 @@ const FooterMobile = () => {
     }, []);
 
     useEffect(() => {
-        fetch('https://izirtuland.liara.run/pages/api/footermb')
+        fetch('https://izirtuland.ir/pages/api/footermb')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);

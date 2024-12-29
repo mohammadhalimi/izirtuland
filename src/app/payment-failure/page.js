@@ -9,7 +9,7 @@ export default function PaymentFailed() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch('https://izirtuland.liara.run/pages/api/warning')
+    fetch('https://izirtuland.ir/pages/api/warning')
       .then((res) => res.json())
       .then((data) => {
         setData(data);

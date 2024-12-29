@@ -11,7 +11,7 @@ const ListForAdmin = () => {
     const [editedData, setEditedData] = useState({ name: '', price: '', pic: '', brand: '', package: '', link: '', id: '', _id: '' });
 
     useEffect(() => {
-        fetch('https://izirtuland.liara.run/pages/api/listfertilizer')
+        fetch('https://izirtuland.ir/pages/api/listfertilizer')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);
@@ -26,7 +26,7 @@ const ListForAdmin = () => {
     const deleteItem = async (_id) => {
         console.log("Deleting item with ID:", _id); // چاپ ID
         try {
-            const res = await fetch('https://izirtuland.liara.run/pages/api/listfertilizer', {
+            const res = await fetch('https://izirtuland.ir/pages/api/listfertilizer', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const ListForAdmin = () => {
 
     const updateItem = async () => {
         try {
-            const res = await fetch('https://izirtuland.liara.run/pages/api/listfertilizer', {
+            const res = await fetch('https://izirtuland.ir/pages/api/listfertilizer', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(editedData),
@@ -76,7 +76,7 @@ const ListForAdmin = () => {
 
     const addNewProduct = async () => {
         try {
-            const res = await fetch('https://izirtuland.liara.run/pages/api/listfertilizer', {
+            const res = await fetch('https://izirtuland.ir/pages/api/listfertilizer', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newProduct),

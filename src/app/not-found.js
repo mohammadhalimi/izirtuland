@@ -13,7 +13,7 @@ const Err = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/pages/api/not-found')
+    fetch('https://izirtuland.ir/pages/api/not-found')
       .then((res) => res.json())
       .then((data) => {
         setData(data);

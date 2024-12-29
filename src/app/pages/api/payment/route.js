@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 const zibal = new Zibal({
   merchant: 'zibal',
-  callbackUrl: 'http://localhost:3000/pages/api/callback',
+  callbackUrl: 'https://izirtuland.ir/pages/api/callback',
 });
 
 export async function POST(request) {

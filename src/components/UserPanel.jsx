@@ -16,14 +16,14 @@ const UserPanel = () => {
     }, []);
 
     useEffect(() => {
-        fetch('https://izirtuland.liara.run/pages/api/sendsms')
+        fetch('https://izirtuland.ir/pages/api/sendsms')
             .then((res) => res.json())
             .then((da) => setDa(da))
             .catch((error) => console.error('Error fetching data:', error));
     }, []);
 
     useEffect(() => {
-        fetch("https://izirtuland.liara.run/pages/api/infouser")
+        fetch("https://izirtuland.ir/pages/api/infouser")
             .then((res) => res.json())
             .then((data) => setData(data))
             .catch((error) => console.error("Error fetching data:", error));
@@ -32,7 +32,7 @@ const UserPanel = () => {
     // Add new user
     const addNewUser = async () => {
         try {
-            const res = await fetch("https://izirtuland.liara.run/pages/api/infouser", {
+            const res = await fetch("https://izirtuland.ir/pages/api/infouser", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(info),
@@ -51,7 +51,7 @@ const UserPanel = () => {
     // Update existing user
     const updateUser = async () => {
         try {
-            const res = await fetch(`https://izirtuland.liara.run/pages/api/infouser`, {
+            const res = await fetch(`https://izirtuland.ir/pages/api/infouser`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(info),

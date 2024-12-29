@@ -54,7 +54,7 @@ export default function Sms() {
     }, [timer]);
 
     useEffect(() => {
-        fetch('https://izirtuland.liara.run/pages/api/forminput')
+        fetch('https://izirtuland.ir/pages/api/forminput')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);
@@ -67,7 +67,7 @@ export default function Sms() {
     const handleSendSms = async () => {
         setSending(true);
         const token = Math.floor(Math.random() * 900000) + 100000;
-        const response = await fetch('https://izirtuland.liara.run/pages/api/sendsms', {
+        const response = await fetch('https://izirtuland.ir/pages/api/sendsms', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -94,7 +94,7 @@ export default function Sms() {
     };
 
     const handleVerify = async () => {
-        const response = await fetch('https://izirtuland.liara.run/pages/api/authenticate', {
+        const response = await fetch('https://izirtuland.ir/pages/api/authenticate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ token: tempToken, inputCode }),

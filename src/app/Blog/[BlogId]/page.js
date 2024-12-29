@@ -10,7 +10,7 @@ const Blogs = ({ params }) => {
     const [data, setData] = useState(null);
     const [isLoading, setLoading] = useState(true);
     useEffect(() => {
-        fetch('https://izirtuland.liara.run/pages/api/pageblogs')
+        fetch('https://izirtuland.ir/pages/api/pageblogs')
             .then((res) => res.json())
             .then((data) => {
                 setData(data);
