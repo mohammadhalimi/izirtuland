@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import connect from "../../../../../db"
 import License from '../../../../../models/license'
 
-export const GET = async (request) => {
+export const GET = async () => {
     try {
         await connect();
         const posts = await License.find();

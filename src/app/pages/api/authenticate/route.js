@@ -6,12 +6,11 @@ export async function POST(req, res) {
     const { token, inputCode } = body;
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        // بررسی کد احراز هویت (برای سادگی فرض می‌کنیم موفقیت‌آمیز است)
         if (parseInt(inputCode) === decoded.token) {
             const userToken = jwt.sign(
-                { receptor: decoded.receptor }, // اضافه کردن receptor به توکن
-                process.env.JWT_SECRET, // کلید محرمانه
-                { expiresIn: '1h' } // مدت اعتبار توکن
+                { receptor: decoded.receptor },
+                process.env.JWT_SECRET,
+                { expiresIn: '1h' }
             );
             return NextResponse.json({ success: true, userToken }, { status: 200 });
         } else {

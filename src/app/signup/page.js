@@ -105,7 +105,7 @@ export default function Sms() {
             localStorage.removeItem('tempToken');
             localStorage.removeItem('timer');
             document.cookie = `user-token=${data.userToken}; path=/; max-age=3600`;
-            setMessage('ورود موفقیت‌آمیز بود! 🎉');
+            setMessage('ورود موفقیت‌آمیز بود!');
             router.push(`/userpanel/${receptor}`);
         } else {
             setMessage(data.message);

@@ -1,4 +1,5 @@
 'use client';
+
 import { useState, useEffect } from "react";
 
 const UserPanel = () => {
@@ -29,7 +30,6 @@ const UserPanel = () => {
             .catch((error) => console.error("Error fetching data:", error));
     }, []);
 
-    // Add new user
     const addNewUser = async () => {
         try {
             const res = await fetch("https://izirtuland.ir/pages/api/infouser", {

@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import connect from "../../../../../db"
 import PageProducts from '../../../../../models/pageproduct'
-import mongoose from 'mongoose'; // Make sure to import mongoose
+import mongoose from 'mongoose';
 
-export const GET = async (request) => {
+export const GET = async () => {
     try {
         await connect();
         const posts = await PageProducts.find();
@@ -13,7 +13,6 @@ export const GET = async (request) => {
     }
 }
 
-// POST a new item
 export async function POST(request) {
     try {
         const item = await request.json();
@@ -28,10 +27,7 @@ export async function POST(request) {
             package: item.package,
             buy: item.buy,
         };
-
-        // ذخیره‌سازی داده‌ها در پایگاه داده
         const savedItem = await PageProducts.create(newItem);
-
         return new Response(JSON.stringify(savedItem), {
             headers: {
                 "Content-Type": "application/json",
@@ -45,26 +41,18 @@ export async function POST(request) {
     }
 }
 
-
-// DELETE an item by ID
 export async function DELETE(request) {
     const deletedItem = await request.json();
-    const id = deletedItem._id; // Get the ID from the request
-
+    const id = deletedItem._id;
     if (!id) {
         return NextResponse.json({ error: 'ID is required to delete an item' }, { status: 400 });
     }
-
-    // Log the incoming ID
     console.log("Attempting to delete item with ID:", id);
-
-    // Validate ObjectId
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return NextResponse.json({ error: 'Invalid ID format' }, { status: 400 });
     }
-
     try {
-        const objectId = new mongoose.Types.ObjectId(id); // Convert it to ObjectId
+        const objectId = new mongoose.Types.ObjectId(id);
         const deletedItem = await PageProducts.findByIdAndDelete(objectId);
 
         if (deletedItem) {
@@ -78,27 +66,17 @@ export async function DELETE(request) {
     }
 }
 
-
-
-// PUT to update an item by ID
-
-
 export async function PUT(request) {
     try {
         const updatedItem = await request.json();
         const itemId = updatedItem._id;
-
-        console.log("Updating item with ID:", itemId); // Log the ID
-
+        console.log("Updating item with ID:", itemId);
         if (!mongoose.Types.ObjectId.isValid(itemId)) {
-            return NextResponse.json({ error: 'Invalid item ID' }, { status: 400 }); // Validate ObjectId
+            return NextResponse.json({ error: 'Invalid item ID' }, { status: 400 });
         }
-
         const objectId = new mongoose.Types.ObjectId(itemId);
         const existingItem = await PageProducts.findById(objectId);
-
-        console.log("Existing Item:", existingItem); // Log the existing item
-
+        console.log("Existing Item:", existingItem);
         if (existingItem) {
             existingItem.title = updatedItem.title || existingItem.title;
             existingItem.text = updatedItem.text || existingItem.text;

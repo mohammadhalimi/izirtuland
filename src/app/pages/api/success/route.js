@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import connect from '../../../../../db';
 import Success from '../../../../../models/success';
 
-export const GET = async (request) => {
+export const GET = async () => {
     try {
         await connect();
         const posts = await Success.find();

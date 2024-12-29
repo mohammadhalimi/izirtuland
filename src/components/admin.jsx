@@ -73,7 +73,7 @@ const Admin = ({ logout }) => {
             <div>{selectedContent}</div>
           )
         ) : (
-          <p>هیچ محتوایی انتخاب نشده است.</p>
+          <p className='font-primaryMedium'>هیچ محتوایی انتخاب نشده است.</p>
         )}
       </div>
       <button

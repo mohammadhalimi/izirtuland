@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import connect from "../../../../../db"
 import Liquidslider from '../../../../../models/liquidslider'
 
-export const GET = async (request) => {
+export const GET = async () => {
     try {
         await connect();
         const posts = await Liquidslider.find();

@@ -24,7 +24,7 @@ const ListForAdmin = () => {
     }, []);
 
     const deleteItem = async (_id) => {
-        console.log("Deleting item with ID:", _id); // چاپ ID
+        console.log("Deleting item with ID:", _id);
         try {
             const res = await fetch('https://izirtuland.ir/pages/api/listfertilizer', {
                 method: 'DELETE',

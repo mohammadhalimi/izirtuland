@@ -4,10 +4,6 @@ import { jwtVerify } from 'jose';
 export async function middleware(request) {
     const { pathname } = request.nextUrl
 
-    if(pathname.startsWith('/pages/api')){
-        return NextResponse.redirect(new URL('/', request.url));
-    }
-
     if (pathname === '/signup') {
         const authCookie = request.cookies.get('user-token');
         const authToken = authCookie ? authCookie.value : null;
@@ -57,5 +53,5 @@ export async function middleware(request) {
 }
 
 export const config = {
-    matcher: ['/userpanel/:path*', '/admin/:path*', '/signup','/pages/api/:path*'],
+    matcher: ['/userpanel/:path*', '/admin/:path*', '/signup'],
 };

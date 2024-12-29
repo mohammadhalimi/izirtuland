@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import connect from "../../../../../db"
 import SearchBar from '../../../../../models/searchbar'
 
-export const GET = async (request) => {
+export const GET = async () => {
     try {
         await connect();
         const posts = await SearchBar.find();

@@ -35,7 +35,7 @@ const Useer = ({ params }) => {
         }));
 
         setMenuItems(items);
-        setMenuLoading(false); // منو بارگذاری شده
+        setMenuLoading(false);
       } catch (error) {
         console.error('Error fetching menu items:', error);
       }
@@ -49,7 +49,7 @@ const Useer = ({ params }) => {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        setLoading(false); // داده‌ها بارگذاری شده
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);

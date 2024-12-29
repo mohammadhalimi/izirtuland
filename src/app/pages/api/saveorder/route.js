@@ -7,19 +7,15 @@ export async function POST(req) {
     await connect();
 
     const orderData = await req.json();
-
-    // Validate required fields
     if (!orderData.trackId || !orderData.userPhone || !orderData.items || !orderData.totalAmount) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    // Check if the order already exists
     const existingOrder = await FinalOrder.findOne({ trackId: orderData.trackId });
     if (existingOrder) {
       return NextResponse.json({ message: 'Order already exists', order: existingOrder }, { status: 200 });
     }
 
-    // Create a new order
     const newOrder = new FinalOrder(orderData);
     const savedOrder = await newOrder.save();
 
@@ -33,7 +29,7 @@ export async function POST(req) {
   }
 }
 
-export const GET = async (request) => {
+export const GET = async () => {
     try {
         await connect();
         const posts = await FinalOrder.find();
