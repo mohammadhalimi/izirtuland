@@ -4,7 +4,7 @@ import { jwtVerify } from 'jose';
 export async function middleware(request) {
     const { pathname } = request.nextUrl
 
-    if(pathname.startsWith === '/pages/api'){
+    if(pathname.startsWith('/pages/api')){
         return NextResponse.redirect(new URL('/', request.url));
     }
 
